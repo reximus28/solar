@@ -1,0 +1,28 @@
+{% extends 'pages/index.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Customer List</h1>
+
+    <a href="{% url 'create_customer' %}" class="btn btn-primary mb-3">Create Customer</a>
+
+    <ul class="list-group">
+        {% for customer in customers %}
+            <li class="list-group-item">
+                {{ customer.first_name }} {{ customer.last_name }}
+                - <form method="post" action="{% url 'update_customer' %}" class="d-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="customer_id" value="{{ customer.id }}">
+                    <button type="submit" class="btn btn-warning btn-sm">Update</button>
+                </form>
+                - <form method="post" action="{% url 'delete_customer' %}" class="d-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="customer_id" value="{{ customer.id }}">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

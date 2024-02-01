@@ -1,0 +1,15 @@
+{% extends 'pages/index.html' %}
+{% block content %}
+
+
+<div class="container mt-5">
+    <h1 class="mb-4">Update Customer</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="customer_id" value="{{ customer.id }}"> <!-- Add this line -->
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update Customer</button>
+    </form>
+</div>
+{% endblock %}

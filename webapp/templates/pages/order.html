@@ -1,0 +1,16 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="mt-4">Place Your Order</h1>
+
+<form method="post" enctype="multipart/form-data" class="mt-3">
+    {% csrf_token %}
+    {{ customer_form.as_p }}
+    {{ order_form.as_p }}
+    <button type="submit" class="btn btn-primary">Place Order</button>
+</form>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+{% endblock %}

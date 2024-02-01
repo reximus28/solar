@@ -1,0 +1,46 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+        <div class="jumbotron jumbotron-fluid text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+    <div class="container">
+      <h1 class="display-4">SOLAR POWER </h1>
+      <p class="lead">Every household run on solar power which is sustainable less expensive.</p>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/j1.jpg' %}" class="card-img-top" alt="Solar Panel 1">
+          <div class="card-body">
+            <h5 class="card-title">High-Efficiency Solar Panel</h5>
+            <p class="card-text">Harness the power of the sun with our advanced solar panels.</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/j2.jpg' %}" class="card-img-top" alt="Inverter 1">
+          <div class="card-body">
+            <h5 class="card-title">Smart Solar Inverter</h5>
+            <p class="card-text">Optimize your solar energy usage with our intelligent inverters.</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/j3.jpg' %}" class="card-img-top" alt="Battery 1">
+          <div class="card-body">
+            <h5 class="card-title">Solar Battery Storage</h5>
+            <p class="card-text">Store excess energy for use during low sunlight hours with our solar batteries.</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
